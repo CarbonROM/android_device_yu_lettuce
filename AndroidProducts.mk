@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2014 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,15 +13,5 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include device/cyanogen/msm8916-common/BoardConfigCommon.mk
-
-include device/yu/lettuce/board/*.mk
-
-# inherit from proprietary files
--include vendor/yu/lettuce/BoardConfigVendor.mk
-
-BOARD_GLOBAL_CFLAGS += -DBATTERY_REAL_INFO
-
-# Bootanimation optimizations
-TARGET_BOOTANIMATION_PRELOAD := true
-TARGET_BOOTANIMATION_TEXTURE_CACHE := true
+PRODUCT_MAKEFILES := \
+    $(LOCAL_DIR)/carbon_lettuce.mk
